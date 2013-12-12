@@ -1,6 +1,6 @@
 {
   "name": "travis-fold",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Tiny Module for emitting folding syntax for Travis CI output",
   "main": "index.js",
   "scripts": {
