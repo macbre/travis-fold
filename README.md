@@ -16,8 +16,9 @@ npm install travis-fold
 
 ```js
 var fold = require('travis-fold'),
+	ret;
 
-var ret = [
+ret = [
 	fold.start('foo'),
 	'bar',
 	'next line',
