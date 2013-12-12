@@ -1,0 +1,25 @@
+{
+  "name": "travis-fold",
+  "version": "0.1.0",
+  "description": "Tiny Module for emitting folding syntax for Travis CI output",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "lint": "jshint *.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/macbre/travis-fold.git"
+  },
+  "keywords": [
+    "travis",
+    "travis-ci",
+    "folding"
+  ],
+  "devDependencies": {
+    "jshint": ">=2.1.11"
+  },
+  "author": "macbre <maciej.brencz@gmail.com> (http://macbre.net)",
+  "license": "BSD",
+  "readmeFilename": "README.md"
+}
