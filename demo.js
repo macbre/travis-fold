@@ -15,12 +15,19 @@ ret = [
 	'next line',
 	'next line',
 	'next line',
-	fold.end('foo')
+	fold.end('foo'),
+	'test',
+	'test',
+	fold.start('https://github.com/macbre/phantomas/issues/141'),
+	'Testing <https://github.com/macbre/phantomas/issues/141>',
+	'foo',
+	'bar',
+	fold.end('https://github.com/macbre/phantomas/issues/141')
 ];
 
 console.log(ret.join('\n').trim());
 
-console.log('Hello, ' + process.env.USERNAME);
+console.log('Hello, ' + process.env.USER + '!');
 
 console.log(
 	fold.wrap('FooBar', "test\n123\ntest\n")
