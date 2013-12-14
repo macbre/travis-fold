@@ -16,25 +16,29 @@ npm install travis-fold
 
 ```js
 var fold = require('travis-fold'),
-	ret;
+	out = [];
 
-ret = [
-	fold.start('foo'),
-	'bar',
-	fold.start('bar'), // nested fold
-	'next line',
-	'next line',
-	'next line',
-	fold.end('bar'),
-	'and yet another next line',
-	'next line',
-	fold.end('foo')
-];
+// prepare output
+out.push('Output begins...');
 
-console.log(ret.join('\n').trim());
+fold.pushStart(out, 'fold');
+out.push('next line');
+
+fold.pushStart(out, 'bar'); // nested
+out.push('next line');
+out.push('next line');
+out.push('next line');
+fold.pushEnd(out, 'bar');
+
+out.push('next line');
+out.push('next line');
+fold.pushEnd(out, 'fold');
+
+// and emit it
+console.log(out.join('\n').trim());
 ```
 
-### Links
+### In action
 
 * [Live example on Travis CI](https://travis-ci.org/macbre/travis-fold)
-* ``node demo.js``
+* ``node demo.js`` vs ``TRAVIS=true node demo.js``

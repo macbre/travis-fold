@@ -1,33 +1,30 @@
 #!/usr/bin/env node
 var fold = require('./index.js'),
-	ret;
+	ret = [];
 
 console.error('stderr output...');
 console.error('stderr output...');
 
-ret = [
-	fold.start('foo'),
-	'bar',
-	'next line',
-	'next line',
-	fold.start('bar'),
-	'next line',
-	'next line',
-	'next line',
-	fold.end('bar'),
-	'next line',
-	'next line',
-	'next line',
-	fold.end('foo'),
-	'test',
-	'test',
-	fold.start('https://github.com/macbre/phantomas/issues/141'),
-	'Testing <https://github.com/macbre/phantomas/issues/141>',
-	'foo',
-	'bar',
-	fold.end('https://github.com/macbre/phantomas/issues/141')
-];
+// push to ret array
+fold.pushStart(ret, 'foo');
 
+ret.push('bar');
+ret.push('next line');
+ret.push('next line');
+
+fold.pushStart(ret, 'bar'); // nested
+ret.push('next line');
+ret.push('next line');
+ret.push('next line');
+fold.pushEnd(ret, 'bar');
+
+ret.push('next line');
+ret.push('next line');
+ret.push('next line');
+
+fold.pushEnd(ret, 'foo');
+
+// format ret array and echo it
 console.log(ret.join('\n').trim());
 
 console.log('Hello, ' + process.env.USER + '!');
