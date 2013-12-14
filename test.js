@@ -19,3 +19,6 @@ assert.strictEqual(true, fold.isTravis(), 'isTravis() should return true');
 assert.strictEqual('travis_fold:start:foo', fold.start('foo'));
 assert.strictEqual('travis_fold:end:foo', fold.end('foo'));
 assert.strictEqual('travis_fold:start:foo\ncontent\n123\ntravis_fold:end:foo', fold.wrap('foo', 'content\n123\n'));
+
+// URL encoding
+assert.strictEqual('travis_fold:start:https-github-com-macbre-travis-fold123', fold.start('https://github.com/macbre/travis-fold123'));

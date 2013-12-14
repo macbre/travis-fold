@@ -4,8 +4,12 @@
 module.exports = (function() {
 
 	// private
+	function encode(group) {
+		return group.replace(/[^A-Za-z\d]+/g, '-');
+	}
+
 	function format(type, group) {
-		return isTravis() ? ("travis_fold:" + type + ":" + group) : '';
+		return isTravis() ? ("travis_fold:" + type + ":" + encode(group)) : '';
 	}
 
 	// public
