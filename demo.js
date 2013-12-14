@@ -2,6 +2,9 @@
 var fold = require('./index.js'),
 	ret;
 
+console.error('stderr output...');
+console.error('stderr output...');
+
 ret = [
 	fold.start('foo'),
 	'bar',
