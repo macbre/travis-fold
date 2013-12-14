@@ -21,6 +21,12 @@ var fold = require('travis-fold'),
 ret = [
 	fold.start('foo'),
 	'bar',
+	fold.start('bar'), // nested fold
+	'next line',
+	'next line',
+	'next line',
+	fold.end('bar'),
+	'and yet another next line',
 	'next line',
 	fold.end('foo')
 ];
